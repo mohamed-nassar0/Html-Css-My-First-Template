@@ -1,0 +1,602 @@
+/* start my framework */
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #10cab7;
+    --secondary-color: #2c4856;
+    --padding-60: 60px;
+}
+
+body {
+    font-family: 'work sans', 'sans serif';
+}
+
+.container {
+    margin: 0 auto;
+    padding:0 20px;
+}
+
+/* for small screen */
+@media (min-width: 769px) {
+    .container {
+        padding: 0;
+        width: 700px;
+    }
+}
+
+/* for large screen and laptop */
+@media (min-width: 1024px) {
+    .container {
+        padding: 0;
+        width: 950px;
+    }
+}
+
+/* for large screen */
+@media (min-width: 1200px) {
+    .container {
+        padding: 0;
+        width: 1100px;
+    }
+}
+
+.special-heading {
+    font-size: 100px;
+    text-align: center;
+    letter-spacing: -4px;
+    color: #ecebed;
+    font-weight: 800;
+}
+
+.special-heading + p {
+    color: #333;
+    text-align: center;
+    margin-top: -32px;
+    padding-bottom: var(--padding-60);
+}
+
+@media (max-width: 768px) {
+
+    .special-heading {
+        font-size: 60px;
+    }
+
+    .special-heading + p {
+        margin-top: -22px;
+    }
+
+}
+
+
+/* end my framework */
+
+/* start header */
+header {
+    padding: 20px;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    width: 60px;
+}
+
+header .links {
+    position: relative;
+}
+
+header .links .icon {
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    cursor:pointer;
+}
+
+header .links .icon span {
+    background: #333;
+    height: 5px;
+    width: 100%;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+header .links .icon span:nth-of-type(2) {
+    width: 50%;
+    transition: width .1s linear;
+}
+
+header .links:hover span:nth-of-type(2) {
+    width: 100%;
+}
+
+header .links ul {
+    padding: 0;
+    background: #eee;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 35px);
+    width: 120px;
+    display: none;
+}
+
+header .links ul::before {
+    content: '';
+    border: 20px solid;
+    border-color: transparent transparent #eee;
+    position: absolute;
+    right: 0;
+    top: -40px;
+}
+
+header .links ul li {
+    list-style: none;
+    padding: 10px;
+    transition: padding .3s;
+}
+
+header .links ul li:not(:last-child) {
+    border-bottom: 1px solid #333;
+}
+
+header .links ul li a {
+    text-decoration: none;
+    color: #333; 
+}
+
+header .links ul li:hover {
+    color: #fff;
+    padding-left: 25px;
+
+}
+/* end header */
+
+/* start landing */
+.landing {
+    background-image: url('../images/mountain.jpg');
+    background-position: center center;
+    background-size: cover;
+    height: calc(100vh - 68px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.landing .head-and-text h1 {
+    color: var(--main-color);
+    margin: 0;
+    margin-bottom: 25px;
+}
+
+.landing .head-and-text p {
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+    color: #333
+}
+
+/* 
+- for extra small mobile screen
+- width 350px or lower
+*/
+@media (max-width: 350px) {
+    .landing .head-and-text p {
+        width: 180px;
+    }
+}
+/* end landing */
+
+/* start features */
+.features {
+    padding: 50px 0;
+    background: #f6f6f6;
+}
+
+.features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.features .features-box {
+    padding: 20px;
+    text-align: center;
+}
+
+/* 
+- for extra small mobile screen
+- width 350px or lower
+*/
+@media (max-width: 350px) {
+
+    /* design features */
+    .features .container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .features .features-box {
+        padding: 0;
+    } 
+
+}
+
+.features .features-box i {
+    color: var(--main-color);
+    font-size: 50px;
+}
+
+.features .features-box h3 {
+    margin: 25px 0;
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
+.features .features-box p {
+    line-height: 1.7;
+    color: #333;
+}
+/* end features */
+
+/* start servies */
+.services {
+    padding: 50px 0;
+}
+
+.services .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* 
+- for extra small mobile screen
+- width 350px or lower
+*/
+@media (max-width: 350px) {
+    
+    /* design services */
+    .services .container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+}
+
+.services .services-box {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+    .services .services-box {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.services .services-box .image {
+    position: relative;
+}
+
+.services .services-box img {
+    max-height: 350px;
+}
+
+@media (max-width: 1023px) {
+    .services .container .column:last-of-type {
+        display: none;
+    }
+}
+
+.services .services-box .image:before {
+    content: '';
+    width: 100px;
+    height: 120%;
+    background: var(--secondary-color);
+    position: absolute;
+    top: -10%;
+    right: -40px;
+    z-index: -1;
+}
+
+.services .services-box i {
+    flex-basis: 60px;
+    color: var(--main-color);
+    font-size: 26px;
+}
+
+.services .services-box .text-box {
+    flex: 1;
+}
+
+.services .services-box .text-box h3 {
+    margin-bottom: 20px 
+}
+
+.services .services-box .text-box p {
+    color: #333;
+    line-height: 1.7;
+}
+/* end services */
+
+/* start portfolio */
+.portfolio {
+    background: #f6f6f6;
+    padding:50px 0;
+}
+
+.portfolio .my-portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* 
+- for extra small mobile screen
+- width 350px or lower
+*/
+@media (max-width: 350px) {
+    
+    .portfolio .my-portfolio {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    
+}
+
+.portfolio .my-portfolio .portfolio-card {
+    background: #fff;
+}
+
+.portfolio .my-portfolio .portfolio-card img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+.portfolio .my-portfolio .portfolio-card h3 {
+    padding: 5px 20px 10px 20px;
+}
+
+.portfolio .my-portfolio .portfolio-card p {
+    padding: 0 10px 20px 20px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.portfolio button {
+    margin-top: 30px;
+    padding: 5px 10px;
+    font-weight: 500;
+    background: #fff;
+    border: 1px solid #000;
+    outline: none;
+    border-radius: 5px;
+    margin-left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+
+.portfolio button:hover {
+    background: #000;
+    color: #fff;
+    border-color: #fff;
+}
+/* end portfolio */
+
+/* start about */
+.about {
+    padding: 50px 0;
+}
+
+.about .about-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px){
+    .about .about-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.about .about-box .about-image {
+    height: 300px;
+    position: relative;
+}
+
+@media (max-width: 768px){
+
+    .about .about-box .about-image {
+        margin-bottom: 25px;
+    }
+
+}
+
+.about .about-box .about-image img {
+    width: auto;
+    height: 100%;
+}
+
+.about .about-box .about-image::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: calc(100% + 80px);
+    background: #f6f6f6;
+    top: -40px;
+    left: -10px;
+    z-index: -1;
+}
+
+.about .about-box .about-image::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 220px;
+    border: 5px solid var(--main-color);
+    border-width: 0 0 80px 80px;
+    top: -40px;
+    right: -150px;
+    z-index: -1;
+}
+
+@media (max-width: 1023px) {
+    .about .about-box .about-image::before,
+    .about .about-box .about-image::after {
+        display: none;
+    }
+}
+    
+.about .about-box .about-content {
+    width: calc(100% - 500px);
+}
+
+@media (max-width: 1023px) {
+    .about .about-box .about-content {
+        width: calc(100% - 250px);
+    }
+}
+
+@media (max-width: 768px){
+
+    .about .about-box .about-content {
+        width: 100%;
+    }
+
+}
+
+.about .about-box .about-content p {
+    font-weight: 800;
+    line-height: 1.7;
+}
+
+.about .about-box .about-content hr {
+    margin: 30px 0 25px;
+    border: 1px solid var(--main-color);
+    width: 50%;
+}
+
+@media (max-width: 768px){
+
+    .about .about-box .about-content hr {
+        margin-left: 25%;
+    }
+
+}
+
+.about .about-box .about-content p:last-of-type {
+    font-weight:normal;
+    color: #333;
+}
+/* end about */
+
+/* start contact */
+.contact {
+    padding: 50px 0;
+    background: #f6f6f6;
+}
+
+.contact p:not(.special-heading + p) {
+    color: var(--secondary-color);
+    font-weight: 800;
+    text-align: center;
+    font-size: 30px;
+}
+
+.contact a {
+    color: var(--main-color);
+    text-decoration: none;
+    font-size: 30px;
+    text-align: center;
+    display: block;
+    transition: color .3s;
+    font-weight: 800;
+}
+
+.contact a:hover {
+    color: var(--secondary-color);
+}
+
+.contact .social {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 250px) {
+    .contact .social {
+        font-size: 10px;
+    }
+}
+
+.contact .social i {
+    margin-left: 10px;
+    color: var(--secondary-color);
+}
+
+@media (max-width: 250px) {
+    .contact .social i {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    .contact p:not(.special-heading + p),
+    .contact a {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 387px) {
+    .contact p:not(.special-heading + p),
+    .contact a {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 317px) {
+    .contact p:not(.special-heading + p),
+    .contact a {
+        font-size: 15px;
+    }
+}
+/* end contact */
+
+/* start footer */
+footer {
+    background: var(--secondary-color);
+    color: #fff;
+    padding: 25px 0;
+    text-align: center;
+}
+
+footer span {
+    color: var(--main-color);
+}
+/* end footer */
